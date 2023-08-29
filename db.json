@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Stargazer",
+      "image": "https://www.cebule.pl/pol_pl_Zestaw-Lilie-Mix-10-szt-1057_10.webp",
+      "price": "25.99",
+      "id": 8
     }
   ]
 }
