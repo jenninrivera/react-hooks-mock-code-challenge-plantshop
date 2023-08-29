@@ -12,13 +12,13 @@ function PlantCard({plant, handleSoldOut}) {
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
       <p>Price: {plant.price}</p>
-      <button onClick={handleSoldOut}>
+      <div onClick={handleSoldOut} >
         {inStock ? (
         <button className="primary">In Stock</button>
       ) : (
         <button>Out of Stock</button>
       )}
-        </button>
+      </div>
     </li>
   );
 }
