@@ -1,10 +1,20 @@
 import React, {useState} from "react";
 
-function PlantCard({plant, handleSoldOut}) {
-  const [inStock, setInStock] = useState(true)
+function PlantCard({plant}) {
+  const [inStock, setInStock] = useState(plant.in_stock)
 
   function handleSoldOut() {
-    setInStock(!inStock) 
+    setInStock(inStock === !inStock)
+    // fetch('http://localhost:6001/plants/' + id, {
+    //   method: "PATCH",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json"
+    //   },
+    //   body: JSON.stringify ({
+    //     in_stock: inStock
+    //   })
+    // })
   }
   
   return (
@@ -12,13 +22,11 @@ function PlantCard({plant, handleSoldOut}) {
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
       <p>Price: {plant.price}</p>
-      <div onClick={handleSoldOut} >
-        {inStock ? (
-        <button className="primary">In Stock</button>
+        {plant.inStock ? (
+        <button className="primary" onClick={handleSoldOut}>In Stock</button>
       ) : (
-        <button>Out of Stock</button>
+        <button onClick={handleSoldOut}>Out of Stock</button>
       )}
-      </div>
     </li>
   );
 }

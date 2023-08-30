@@ -29,15 +29,14 @@ const addNewPlant = event => {
   })
   setPlants([...plants, newPlant])
 }
-const updatePlantSearch = event => setPlantSearch(event.target.value)
 
 const filteredPlants = plants.filter(plant => {
-  return (plantSearch ? plant.name.toUpperCase().includes(plantSearch.toUpperCase()): true)
+  return plant.name.toUpperCase().includes(plantSearch.toUpperCase())
 })
   return (
     <main>
       <NewPlantForm addNewPlant={addNewPlant}/>
-      <Search updatePlantSearch={updatePlantSearch}/>
+      <Search setPlantSearch={setPlantSearch}/>
       <PlantList plants={filteredPlants}/>
     </main>
   );
